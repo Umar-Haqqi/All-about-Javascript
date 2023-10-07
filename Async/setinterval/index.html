@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async - 2 projects</title>
+</head>
+
+<body>
+    <h1>hello world!!!</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const heading = document.querySelector('h1');
+    const startBtn = document.querySelector("#start");
+    const stopBtn = document.querySelector("#stop");
+
+    let intervalId;
+
+    const startInterval = () => {
+        intervalId = setInterval(() => {
+            heading.innerHTML = "umar";
+            console.log("clicked", Date.now());
+        }, 300)
+    }
+
+    const stopTimeout = () => {
+        heading.innerHTML = "hello world..."
+        clearInterval(intervalId)
+        console.log("stopped");
+    }
+
+    startBtn.addEventListener('click', startInterval);
+    stopBtn.addEventListener('click', stopTimeout);
+</script>
+
+</html>
